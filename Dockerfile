@@ -32,7 +32,6 @@ RUN sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
 && sudo apt-get install -y  r-base \
 && sudo apt-get install -y  r-base-dev \
 
-# Download and Install RStudio
 && sudo apt-get install -y  gdebi-core \
 && wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb \
 && echo "y" | sudo gdebi rstudio-1.0.44-amd64.deb \
@@ -40,7 +39,8 @@ RUN sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
 
 
 && mkdir -p /opt/images \
-&& mkdir -p /opt/icons
+&& mkdir -p /opt/icons \
+&& sudo apt-get install -y awscli
 
 
 ADD ./scripts /usr/local/scripts
