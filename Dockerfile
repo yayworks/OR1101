@@ -33,7 +33,7 @@ RUN apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
 &&  apt-get install -y  r-base-dev \
 
 &&  apt-get install -y  gdebi-core \
-&&  wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb \
+&&  /usr/bin/wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb \
 &&  echo "y" | gdebi rstudio-1.0.44-amd64.deb \
 &&  rm rstudio-1.0.44-amd64.deb \
 
