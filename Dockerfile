@@ -31,7 +31,7 @@ RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.x86_
 && sudo apt-get install r-base-dev \
 && sudo apt-get install gdebi-core \
 && /usr/bin/wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb \
-&& sudo gdebi rstudio-server-1.1.442-amd64.deb \
+&& echo "y" |sudo gdebi rstudio-server-1.1.442-amd64.deb \
 && rm rstudio-server-1.1.442-amd64.deb \
 
 
