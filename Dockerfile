@@ -25,13 +25,18 @@ RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.x86_
 && apt-get build-dep -y octave \
 
 
+# Install R + RStudio on Ubuntu 14.04
 
-&&  apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
-&&  add-apt-repository 'deb https://ftp.ussg.iu.edu/CRAN/bin/linux/ubuntu trusty/' \
+&& sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
 
-
-
-
+# Ubuntu 12.04: precise
+# Ubuntu 14.04: trusty
+# Ubuntu 16.04: xenial
+# Basic format of next line deb https://<my.favorite.cran.mirror>/bin/linux/ubuntu <enter your ubuntu version>/
+&& sudo add-apt-repository 'deb https://ftp.ussg.iu.edu/CRAN/bin/linux/ubuntu trusty/' \
+&& sudo apt-get update \
+&& sudo apt-get install r-base \
+&& sudo apt-get install r-base-dev \
 
 
 
