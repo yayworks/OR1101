@@ -24,12 +24,10 @@ RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.x86_
 && apt-get install -y octave \
 && apt-get build-dep -y octave \
 
-
-&&  apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
-&&  add-apt-repository 'deb https://ftp.ussg.iu.edu/CRAN/bin/linux/ubuntu trusty/' \
 &&  apt-get update \
 &&  apt-get install -y  r-base \
 &&  apt-get install -y  r-base-dev \
+
 
 
 
