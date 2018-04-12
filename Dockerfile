@@ -27,9 +27,9 @@ RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.x86_
 
 # Install R + RStudio on Ubuntu 14.04
 
-RUN sudo apt-get install r-base \
-&& sudo apt-get install r-base-dev 
-RUN sudo apt-get install gdebi-core 
+RUN sudo apt-get install -y r-base \
+&& sudo apt-get install -y r-base-dev 
+RUN sudo apt-get install -y gdebi-core 
 RUN /usr/bin/wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb 
 RUN echo "y" |sudo gdebi rstudio-server-1.1.442-amd64.deb 
 RUN rm rstudio-server-1.1.442-amd64.deb 
