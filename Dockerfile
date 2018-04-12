@@ -26,21 +26,21 @@ RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.x86_
 
 # Install R + RStudio on Ubuntu 14.04
 
-RUN sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
-&& sudo add-apt-repository 'deb https://ftp.ussg.iu.edu/CRAN/bin/linux/ubuntu trusty/' \
-&& sudo apt-get update \
-&& sudo apt-get install -y  r-base \
-&& sudo apt-get install -y  r-base-dev \
+RUN apt-key adv –keyserver keyserver.ubuntu.com –recv-keys E084DAB9 \
+&&  add-apt-repository 'deb https://ftp.ussg.iu.edu/CRAN/bin/linux/ubuntu trusty/' \
+&&  apt-get update \
+&&  apt-get install -y  r-base \
+&&  apt-get install -y  r-base-dev \
 
-&& sudo apt-get install -y  gdebi-core \
-&& wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb \
-&& echo "y" | sudo gdebi rstudio-1.0.44-amd64.deb \
-&& rm rstudio-1.0.44-amd64.deb \
+&&  apt-get install -y  gdebi-core \
+&&  wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb \
+&&  echo "y" | sudo gdebi rstudio-1.0.44-amd64.deb \
+&&  rm rstudio-1.0.44-amd64.deb \
 
 
 && mkdir -p /opt/images \
 && mkdir -p /opt/icons \
-&& sudo apt-get install -y awscli
+&& apt-get install -y awscli
 
 
 ADD ./scripts /usr/local/scripts
