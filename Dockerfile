@@ -39,6 +39,8 @@ RUN mkdir -p /opt/images \
 && mkdir -p /opt/icons \
 && apt-get install -y awscli
 
+RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf
+
 
 ADD ./scripts /usr/local/scripts
 
